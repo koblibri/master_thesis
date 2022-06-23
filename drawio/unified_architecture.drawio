@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-06-23T13:20:29.758Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="PFpjB8rQNDMOCX1H2oEj" version="19.0.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-23T14:02:58.895Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="lQaQNiNbYvmqq9XS5L-n" version="19.0.1" type="github">
   <diagram id="Kd7wyASOu7EeAkc9sLa2" name="Page-1">
     <mxGraphModel dx="2942" dy="1065" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -162,7 +162,7 @@
         <mxCell id="bY9OKArqrkYzBHjtCmCj-37" value="ES16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" edge="1" parent="1" source="bY9OKArqrkYzBHjtCmCj-34" target="bY9OKArqrkYzBHjtCmCj-4">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="379" y="280" />
+              <mxPoint x="371" y="280" />
               <mxPoint x="200" y="280" />
             </Array>
           </mxGeometry>
@@ -170,8 +170,8 @@
         <mxCell id="bY9OKArqrkYzBHjtCmCj-38" value="ES18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" edge="1" parent="1" source="bY9OKArqrkYzBHjtCmCj-34" target="bY9OKArqrkYzBHjtCmCj-6">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="bY9OKArqrkYzBHjtCmCj-34" value="eSIM Management Portal" style="rounded=0;labelBackgroundColor=none;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="342.5" y="220" width="145" height="40" as="geometry" />
+        <mxCell id="bY9OKArqrkYzBHjtCmCj-34" value="eSIM Management Portal" style="rounded=0;labelBackgroundColor=none;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="326.25" y="220" width="177.5" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
