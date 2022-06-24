@@ -1,1 +1,73 @@
-<mxfile host="app.diagrams.net" modified="2022-06-24T13:33:16.323Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" version="20.0.3" etag="8Q9iTt74-LQyzVWvFSQ6" type="github"><diagram id="wpdVzNzdd8UUsi1Ic-U7">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-06-24T13:45:09.219Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="GywMXFgdW4sgIB-nhV8t" version="20.0.3" type="github">
+  <diagram id="wpdVzNzdd8UUsi1Ic-U7" name="Page-1">
+    <mxGraphModel dx="1222" dy="1121" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ViX14klM-bVVAZBRW584-5" value="Install &#xa;on eUICC" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;verticalAlign=top;align=right;" edge="1" parent="1" source="ViX14klM-bVVAZBRW584-1" target="ViX14klM-bVVAZBRW584-2">
+          <mxGeometry x="0.3333" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ViX14klM-bVVAZBRW584-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=none;startFill=0;strokeWidth=2;" edge="1" parent="1" source="ViX14klM-bVVAZBRW584-1" target="ViX14klM-bVVAZBRW584-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="180" y="270" />
+              <mxPoint x="510" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ViX14klM-bVVAZBRW584-1" value="created" style="ellipse;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="140" y="290" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ViX14klM-bVVAZBRW584-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;" edge="1" parent="1" source="ViX14klM-bVVAZBRW584-2" target="ViX14klM-bVVAZBRW584-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ViX14klM-bVVAZBRW584-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;startArrow=classic;startFill=1;strokeWidth=2;" edge="1" parent="1" source="ViX14klM-bVVAZBRW584-2" target="ViX14klM-bVVAZBRW584-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ViX14klM-bVVAZBRW584-2" value="disabled" style="ellipse;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="310" y="290" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ViX14klM-bVVAZBRW584-3" value="deleted" style="ellipse;aspect=fixed;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="290" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ViX14klM-bVVAZBRW584-4" value="enabled" style="ellipse;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="310" y="420" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ViX14klM-bVVAZBRW584-9" value="MNO or SM-DP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;verticalAlign=top;align=right;" edge="1" parent="1">
+          <mxGeometry x="1" relative="1" as="geometry">
+            <mxPoint x="60" y="329.5" as="sourcePoint" />
+            <mxPoint x="140" y="330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="110" y="329.5" />
+              <mxPoint x="110" y="329.5" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ViX14klM-bVVAZBRW584-10" value="" style="endArrow=none;dashed=1;rounded=0;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="520" as="sourcePoint" />
+            <mxPoint x="280" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ViX14klM-bVVAZBRW584-11" value="" style="endArrow=none;dashed=1;rounded=0;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="520" as="sourcePoint" />
+            <mxPoint x="420" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ViX14klM-bVVAZBRW584-12" value="Operational Phase" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=bottom;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="320" y="500" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ViX14klM-bVVAZBRW584-13" value="Download and &#xa;Installation Phase" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=bottom;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="150" y="500" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ViX14klM-bVVAZBRW584-14" value="End of life" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=bottom;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="480" y="500" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
