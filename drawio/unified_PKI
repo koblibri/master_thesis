@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-06-28T11:48:30.464Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="pzGTOo5XtKXRRFZtI1hG" version="20.0.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-28T12:21:42.972Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="yNGGD0uqWUIsiw-YavXh" version="20.0.3" type="github">
   <diagram id="X8rfKLkUZcRFebq_EZhF" name="Page-1">
     <mxGraphModel dx="1550" dy="835" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -89,6 +89,33 @@
         </mxCell>
         <mxCell id="_vYfgE6XMs8OlJTvA9af-29" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="_vYfgE6XMs8OlJTvA9af-8" target="_vYfgE6XMs8OlJTvA9af-22">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_vYfgE6XMs8OlJTvA9af-39" value="EID" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="150" y="570" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_vYfgE6XMs8OlJTvA9af-40" value="8 Digits IIN" style="rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="26.5" y="620" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_vYfgE6XMs8OlJTvA9af-41" value="TC" style="rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="56.5" y="650" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_vYfgE6XMs8OlJTvA9af-42" value="MII" style="rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="26.5" y="650" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_vYfgE6XMs8OlJTvA9af-43" value="3 Digits &#xa;Country Code" style="rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="86.5" y="650" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_vYfgE6XMs8OlJTvA9af-44" value="3 Digits &#xa;Issuer ID" style="rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="176.5" y="650" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_vYfgE6XMs8OlJTvA9af-45" value="10 Digits Issuer Info" style="rounded=0;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="266.5" y="650" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_vYfgE6XMs8OlJTvA9af-46" value="12 Digits Individual identification Number" style="rounded=0;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="566.5" y="650" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_vYfgE6XMs8OlJTvA9af-47" value="2 Digits&#xa;Checksum" style="rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="926.5" y="650" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
