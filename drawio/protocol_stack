@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-07-08T11:40:23.643Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="GAwHaax2V_Cg9N9yjahp" version="20.0.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-07-08T11:40:45.566Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="Bvr58mJUOOEPlB3H_e49" version="20.0.3" type="github">
   <diagram id="mcGd5x3Yv-5JUx9b2us6" name="Page-1">
     <mxGraphModel dx="1220" dy="1055" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -90,10 +90,10 @@
         <mxCell id="tywr-3RGdMucJaz55WhD-26" value="" style="triangle;rotation=-90;" vertex="1" parent="1">
           <mxGeometry x="417.5" y="90" width="35" height="270" as="geometry" />
         </mxCell>
-        <mxCell id="tywr-3RGdMucJaz55WhD-27" value="Remote Entitiy&#xa;(Server)" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=15;" vertex="1" parent="1">
+        <mxCell id="tywr-3RGdMucJaz55WhD-27" value="Remote Entitiy&#xa;(Server)" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;rounded=0;fontSize=15;" vertex="1" parent="1">
           <mxGeometry x="120" y="130" width="130" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="tywr-3RGdMucJaz55WhD-30" value="User Equipment" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=15;" vertex="1" parent="1">
+        <mxCell id="tywr-3RGdMucJaz55WhD-30" value="User Equipment" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;rounded=0;fontSize=15;" vertex="1" parent="1">
           <mxGeometry x="480" y="130" width="130" height="30" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-40" value="TLS" style="rounded=0;" vertex="1" parent="1">
