@@ -1,91 +1,91 @@
-<mxfile host="app.diagrams.net" modified="2022-07-08T11:04:07.237Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="PPEfA_S54dw-mcJmCIpa" version="20.0.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-07-08T11:33:24.097Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="rmQJiH98R5rJ_b3uT-JF" version="20.0.3" type="github">
   <diagram id="mcGd5x3Yv-5JUx9b2us6" name="Page-1">
     <mxGraphModel dx="1220" dy="1112" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="tywr-3RGdMucJaz55WhD-32" value="EUICC" style="rounded=0;fillColor=#dae8fc;strokeColor=none;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="580" y="160" width="150" height="220" as="geometry" />
+        <mxCell id="tywr-3RGdMucJaz55WhD-32" value="eUICC" style="rounded=0;fillColor=#ffe6cc;strokeColor=none;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="580" y="160" width="150" height="230" as="geometry" />
         </mxCell>
-        <mxCell id="tywr-3RGdMucJaz55WhD-31" value="TE" style="rounded=0;fillColor=#d5e8d4;strokeColor=none;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="290" y="160" width="290" height="220" as="geometry" />
+        <mxCell id="tywr-3RGdMucJaz55WhD-31" value="Terminal Equipment (Device)" style="rounded=0;fillColor=#f5f5f5;strokeColor=none;verticalAlign=top;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="290" y="160" width="290" height="230" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-1" value="Upper Layer(s)" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="150" y="190" width="130" height="30" as="geometry" />
+          <mxGeometry x="150" y="190" width="130" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-2" value="HTTP" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="150" y="220" width="60" height="30" as="geometry" />
+          <mxGeometry x="150" y="210" width="60" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-3" value="CAT_TP" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="220" y="220" width="60" height="30" as="geometry" />
+          <mxGeometry x="220" y="210" width="60" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-4" value="TCP" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="150" y="250" width="60" height="30" as="geometry" />
+          <mxGeometry x="150" y="250" width="60" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-5" value="UDP" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="220" y="250" width="60" height="30" as="geometry" />
+          <mxGeometry x="220" y="250" width="60" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="tywr-3RGdMucJaz55WhD-33" value="IP Network" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;shape=flexArrow;startArrow=block;labelBackgroundColor=none;verticalAlign=top;" edge="1" parent="1" source="tywr-3RGdMucJaz55WhD-6" target="tywr-3RGdMucJaz55WhD-25">
-          <mxGeometry relative="1" as="geometry">
+        <mxCell id="tywr-3RGdMucJaz55WhD-33" value="IP Network" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;shape=flexArrow;startArrow=block;labelBackgroundColor=none;verticalAlign=bottom;" edge="1" parent="1" source="tywr-3RGdMucJaz55WhD-6" target="tywr-3RGdMucJaz55WhD-25">
+          <mxGeometry y="10" relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="215" y="340" />
-              <mxPoint x="365" y="340" />
+              <mxPoint x="215" y="360" />
+              <mxPoint x="365" y="360" />
             </Array>
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-6" value="IP" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="150" y="280" width="130" height="30" as="geometry" />
+          <mxGeometry x="150" y="270" width="130" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-7" value="Upper Layer(s)" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="590" y="190" width="130" height="30" as="geometry" />
+          <mxGeometry x="590" y="190" width="130" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-8" value="HTTP" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="590" y="220" width="60" height="30" as="geometry" />
+          <mxGeometry x="590" y="210" width="60" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-9" value="CAT_TP" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="660" y="220" width="60" height="30" as="geometry" />
+          <mxGeometry x="660" y="210" width="60" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-12" value="BIP" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="590" y="250" width="130" height="30" as="geometry" />
+          <mxGeometry x="590" y="250" width="130" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-13" value="SCP 102 223" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="590" y="280" width="130" height="30" as="geometry" />
+          <mxGeometry x="590" y="270" width="130" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-14" value="SCP 102 221" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="590" y="310" width="130" height="30" as="geometry" />
+          <mxGeometry x="590" y="290" width="130" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-15" value="ISO 7816-3/4" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="590" y="340" width="130" height="30" as="geometry" />
+          <mxGeometry x="590" y="310" width="130" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-16" value="BIP" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="440" y="250" width="130" height="30" as="geometry" />
+          <mxGeometry x="440" y="250" width="130" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-17" value="SCP 102 223" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="440" y="280" width="130" height="30" as="geometry" />
+          <mxGeometry x="440" y="270" width="130" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-18" value="SCP 102 221" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="440" y="310" width="130" height="30" as="geometry" />
+          <mxGeometry x="440" y="290" width="130" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-35" value="" style="edgeStyle=orthogonalEdgeStyle;shape=flexArrow;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;labelBackgroundColor=none;labelBorderColor=none;startArrow=block;" edge="1" parent="1" source="tywr-3RGdMucJaz55WhD-19" target="tywr-3RGdMucJaz55WhD-15">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="505" y="400" />
-              <mxPoint x="655" y="400" />
+              <mxPoint x="505" y="360" />
+              <mxPoint x="655" y="360" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-19" value="ISO 7816-3/4" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="440" y="340" width="130" height="30" as="geometry" />
+          <mxGeometry x="440" y="310" width="130" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-23" value="TCP" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="300" y="250" width="60" height="30" as="geometry" />
+          <mxGeometry x="300" y="250" width="60" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-24" value="UDP" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="370" y="250" width="60" height="30" as="geometry" />
+          <mxGeometry x="370" y="250" width="60" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-25" value="IP" style="rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="300" y="280" width="130" height="30" as="geometry" />
+          <mxGeometry x="300" y="270" width="130" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-26" value="" style="triangle;rotation=-90;" vertex="1" parent="1">
           <mxGeometry x="417.5" y="90" width="35" height="270" as="geometry" />
@@ -95,6 +95,18 @@
         </mxCell>
         <mxCell id="tywr-3RGdMucJaz55WhD-30" value="User Equipment" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=15;" vertex="1" parent="1">
           <mxGeometry x="480" y="130" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tywr-3RGdMucJaz55WhD-40" value="TLS" style="rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="150" y="230" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tywr-3RGdMucJaz55WhD-41" value="SCP80" style="rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="230" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tywr-3RGdMucJaz55WhD-42" value="TLS" style="rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="590" y="230" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tywr-3RGdMucJaz55WhD-43" value="SCP80" style="rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="660" y="230" width="60" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
