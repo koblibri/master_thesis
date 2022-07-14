@@ -1,0 +1,24 @@
+% !TeX root = ../main.tex
+% Add the above to each chapter to make compiling the PDF easier in some editors.
+
+\chapter{Proposed Improvements}\label{chapter:propImprovements}
+
+\section{M2M}
+"Upgrade" to full PKI instead of symmetric keys. Symmetric keys have more management overhead (switching of SM-SR is an almost impossible task). The "computational overhead" advantage of symmetric keys is weak, since asymmetric cryptography and key agreement is already implemented (SM-DP/ISD-P).
+
+Implement allowance checks. 
+
+Ownership Transfer Protocol (SM-SR Change) complicated - also often unwanted by SM-SR owners!
+
+\section{Consumer}
+Activation Code: Sign the code string!
+The AC can be up to 255 Bytes in length for "User Experience" and the ability, to input the AC by hand. This argument fails a bit, since user will either scan the appropriate QR Code, or Copy-Paste the AC-string if the device does not have a camera. Therefore, the length is probably neglegible.
+Signing the code string allows the LPA to directly verify, if the AC has been altered without sending any requests to SM-DP+. A ECDSA signature of an 256-Bit ECC key is 64 bytes long. 
+How to solve the problem of verifying the signature? Who needs to sign it? Usually MNO generates AC. How to get certificate of MNO?
+
+Enforce signature of LPA to be able to manage eUICCs
+
+\section{Both}
+"Bootstrapping" mechanisms. Currently every eSIM relies on a pre-provisioned fallback profile.
+
+eUICC OS updates over provisioning system? 

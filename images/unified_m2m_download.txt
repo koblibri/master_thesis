@@ -1,0 +1,42 @@
+@startuml
+eMP->Operator: [ES17]OrderProfile(List of EIDs)
+Operator->"SM-DP+":[ES2+]DownloadOrder(EID,ProfileType)
+note over "SM-DP+"
+Reserve ICCID
+Generate Profile
+Any Backend Provisioning
+Generate MatchingID
+end note
+Operator<--"SM-DP+": EID, ICCID, MatchingID, SM-DP+ Address
+eMP<--Operator: List of (EID, ICCID, MatchingID, SM-DP+ Address)
+note over eMP: Profiles ready for Download
+eMP <-> "SM-DS": Mutual Authentication, eMP must provide information that it is authorized to manage target eUICC
+eMP -> "SM-DS": [ES16]RegisterDownloadEvent(EID, MatchingID, SM-DP+ Address)
+note over "SM-DS"
+Create Event (SM-DP+ Address, MatchingID)
+[Cascade Event to relevant SM-DS]
+end note
+eMP <-- "SM-DS": Ok
+eMP -> "SM-DS": [ES16]RegisterProfileEvent(EID, ICCID, "enable")
+note over "SM-DS"
+Create Event (ICCID, "enable")
+[Cascade Event to relevant SM-DS]
+end note
+eMP <-- "SM-DS": Ok
+"SM-DS" -> "LPA/eUICC": [ES11]Tries to reach under last-known address
+note over "SM-DS": [Waits until eUICC responds]
+"SM-DS" <-- "LPA/eUICC": Ok
+"SM-DS" <-> "LPA/eUICC": [ES11]Common Mutual Authentication (3.1.2)
+"SM-DS" -> "LPA/eUICC": [ES11]List of Events (Profile Download, Profile Enabling)
+"SM-DS" <-- "LPA/eUICC": Ok
+note over "LPA/eUICC": Process Events Sequentially
+"LPA/eUICC" -> "LPA/eUICC": SM-DP+ Address, MatchingID
+"SM-DP+" <-> "LPA/eUICC": [ES9+]Common Mutual Authentication (3.1.2)
+"SM-DP+" <-> "LPA/eUICC": [ES8+/ES9+]Profile Download and Installation
+Operator<--"SM-DP+": [ES2+]Profile Installed (EID, ICCID)
+eMP<--Operator: [ES17]Profile Installed (EID, ICCID)
+"LPA/eUICC" -> "LPA/eUICC": Enable Profile
+"SM-DP+" <-- "LPA/eUICC": [ES9+]Profile Enabled (EID, ICCID)
+Operator<--"SM-DP+": [ES2+]Profile Enabled (EID, ICCID)
+eMP<--Operator: [ES17]Profile Enabled(EID, ICCID)
+@enduml

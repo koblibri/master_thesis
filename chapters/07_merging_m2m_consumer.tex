@@ -1,0 +1,122 @@
+% !TeX root = ../main.tex
+% Add the above to each chapter to make compiling the PDF easier in some editors.
+
+\chapter{Proposal for Unifying M2M and Consumer}\label{chapter:merging}
+
+Reasoning, why one solution is better than two separate systems
+\begin{itemize}
+    \item Increase ease of use and flexibility
+    \item No Lock-in for one solution
+    \item 
+\end{itemize}
+
+\section{Requirements}
+What are the "hard" requirements of the new system?
+\begin{itemize}
+    \item "Push" a profile to several devices at once
+    \item  Availability of Device -> Denial of Service prevention, only authenticated requests are allowed
+    \item Traceability of requests
+    \item Only add necessary features to consumer design
+    \item 1-to-1 matching of ICCID - EID but simultaneous provisioning of many profiles
+    \item Push must enable download AND management of profile initiated by device fleet owner
+    \item Fallback-Mechansim on Connectivity Loss
+    \item eUICC Info/Status -> All LPA Functionalities should be possible on remote. What are the main functions of LPA:
+    \begin{itemize}
+        \item Local Profile Management (Enable/Disable/Delete/List Profile)
+        \item Local eUICC Management (Retrieve EID, Memory Reset, Set/Edit default SM-DP+ Address)
+        \item 
+    \end{itemize}
+    \item The devices need to receive a "notification" that a profile is ready for them
+    \item The devices are possibly not reachable, system needs to handle that (Delivery at most once <-> at least once?)
+    \item If the device is still alive, but can't be reached during provisioning, the system must handle a profile download, when it has connection again.
+    \item Implementation must have as little resource requirements as possible (low power consumption, low integration/software overhead, less management than in M2M)
+\end{itemize}
+What are the requirements of Consumer system?
+\begin{itemize}
+    \item Same as currently, devices are able to pull a profile whenever they want
+\end{itemize}
+What would be nice to have?
+\begin{itemize}
+    \item Bootstrapping of eSIM (Profile Download, OS Update, Applet Download) -> SM-DS has to keep a prioritized event queue 
+\item eUICC OS Update over the air: Send event (from SM-DS) to eUICC to trigger it
+\end{itemize}
+Why is it better to merge M2M into Consumer and not the other way around?
+\begin{itemize}
+    \item Consumer is the more advanced system, because of full compliance with PKI 
+\end{itemize}
+
+
+
+\section{Unification}
+\subsection{Decision-making}
+\subsubsection{Comparison to SGP.31}
+\begin{itemize}
+    \item Deletion of ES12 (SM-DP/SM-DS): Consumer does not benefit from this interface, Events (in Spec) are rarely used 
+    \item Why is an interface between eSIM Remote Manager and eUICC necessary?
+\end{itemize}
+\subsection{Architecture Overview}
+\begin{figure}[ht]
+    \centering
+    \includesvg[width=0.9\textwidth]{pictures/unified_architecture}
+    %\includegraphics[width=0.75\textwidth]{pictures/M2M_arch.png}
+    \caption{Unified Architecture}
+    \label{fig:uni_arch}
+\end{figure}
+
+Certificate Infrastructure Argument: If Customer Employees goes rogue and "steals" certificate -> Customer Certificate could be revoked
+
+?Synchronization Mechanism between Management Portal and eUICC? How to be certain that the server has the right info what is currently on the eSIM
+
+?Device Factory Reset Mechanism? 
+
+?LPA Verification? For M2M version not really relevant, because device manufacturer is the one who programs the LPA but also manage the eSIM in the end -> would suffer his own consequences from blocking notifications, self-downloading malicious profiles etc.
+\textbf{Discuss: Is it better to secure/certify the LPA or is it better to make the process so authentic, that even a malicious LPA could not achieve anything?}
+It is very hard to certify all LPAs s.t. a malicious LPA is not possible. 
+Ideas: 
+\begin{itemize}
+    \item Sign LPA code - allow only certified and intact LPAs to interact with eSIM. Problem: eSIM needs to be able to verify integrity and authenticity of LPA. A simple key verification is practically not possible, since the eSIM would need to be personalized with this key during manufacturing. (Possible for a Device Manufacturer but not for EUM). 
+    \item Implement certificate in LPA, provide certificate to eSIM. Problem: When LPA is changed, the certificate would still be valid
+    \item Secure Code execution with key from eSIM
+    \item 
+\end{itemize}
+
+Require User to enter a PIN before performing any profile management operation, which is requested and verified by the eSIM itself - then the LPA cannot act autonomously. However, the LPA could still download a profile from an untrusted source and present the user the "right" information
+
+PIN in combination with a second factor for the activation code which only the user knows? E.g. Give user the Activation Code + last 10 characters of "signature" over profile. Only the AC is entered to the LPA. Once the profile is ready for installing (i.e. on the LPA), the SIM asks the user to enter the eSIM-PIN (but then the LPA would know this PIN for the next profile download..). Additionally, in the metadata of the profile, the SM-DP+ has performed a signature over the profile. The user can match the signature characters in the "acceptance". Then the profile has been downloaded from the right SM-DP+, as stated in the activation code. This process does not require the LPA to be trusted, but requires the AC to be authentic.
+
+How to certify the LPA? look into MasterCard/Visa certification for Credit-Card-Terminals? Handshake between LPA and eUICC?
+
+\subsubsection{Ownership Management}
+Currently: Single Point of Trust in GSMA CI
+ - Easy to implement
+ - Usage of HTTPS favors the usage of certificates
+ - Transparency and Readability for Consumers
+ - Trusted Third Party (TTP)
+
+Blockchain/Decentralized PKI for Ownership Verification?
+ - Would require an entire redesign of the certification architecture
+ - Ethereum Blockchain with Smart Contracts
+ - Decentralized Trust
+ - Manageable by Servers, not devices!
+ - How to trust Servers?
+
+
+\subsection{Protocols and Interfaces}
+
+Is a protocol change for profile download in M2M/IoT Devices useful? Maybe MQTT instead of HTTPS or something else?
+TLS always goes through to the eSIM, but the application protocol endpoint could be the device.
+Currently: Communication over SOAP - HTTP - TLS - TCP/IP - Constrained Network
+Common IoT Protocols :
+\begin{itemize}
+    \item PubSub: MQTT "only" has an advantage over HTTP if connections are not torn down quickly, but much data is sent over a continuous channel \parencite{Google:HTTPvsMQTT}. -> Not really useful for profile downloads, as it is an 1-to-1 protocol for profile download. The PubSub model is no advantages for e.g. the profile download. 
+    Can MQTT be applied for the event-distribution (SM-DS)? Are there benefits for using it there?
+    \item CoAP: Designed to work with HTTP-based IoT systems. UDP based 
+    \item HTTP
+\end{itemize}
+
+SM-DS Event Delivery System: Could be integrated in already existing customer/M2M-SP infrastructure: If already a MQTT-Architecture for the device exists, the AC-Token could be sent within a MQTT-Message to the device (and then given to the LPA, which is part of the device's software). This would support an argument for the SM-DS being NOT protocol bound (HTTP as default, Pub/Sub if existing, usage of eSIM as secure-element for authentication)
+Or send the events within single SMS. How to secure the SMS?
+
+\subsection{Security Analysis}
+
+\section{Implementation of a Proof of Concept}

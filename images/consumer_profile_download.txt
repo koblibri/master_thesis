@@ -1,0 +1,84 @@
+@startuml
+skinparam maxMessageSize 500
+participant eUICC order 10
+participant LPA order 20
+participant "SM-DP+" order 40
+"End User" -> LPA : Scan Activation Code containing SM-DP+ Address, AC Token (= Matching ID)
+
+== Mutual Authentication ==
+
+eUICC -> LPA : eUICCInfo1
+eUICC -> LPA : eUICC Challenge
+rnote over LPA, eUICC #FF0000: If Attacker's eUICC should receive the profile, mLPA must exchange the Info at this step.
+rnote over LPA, "SM-DP+" #FF0000: An mLPA or an Attacker could re-route the traffic to the Attacker's SM-DP+.
+rnote over LPA, "SM-DP+": Establish HTTPS Connection in Server-Authentication Mode.
+LPA -> "SM-DP+": eUICC Challenge, eUICC Info1, smdpAddress
+ rnote over "SM-DP+"
+  Check SM-DP+ Address
+  Verify eUICC Signature
+  Generate TransactionID
+  Generate serverChallenge
+  Generate serverSigned1
+ end rnote
+LPA <-- "SM-DP+": TransactionID, serverSigned1, serverSignature, SM-DP+ (DPauth) Certificate
+rnote over LPA
+Check returned SM-DP+ Address (contained in serverSigned)
+OID in Cert must match OID in AC
+Generate ctxParams1 (M-ID, deviceInfo)
+end rnote
+LPA -> eUICC: Authenticate Server (Transaction-ID, serverSigned1, ctxParams1)
+rnote over eUICC
+Verify SM-DP+ Certificate against CI
+Verify SM-DP+ signed1 & Signature
+Generate euiccSigned1 (Trans-ID, serverChallenge, euiccInfo2, ctxParams1)
+end rnote
+rnote over eUICC #FF0000: Attacker's SM-DP+ Certificate must be verifiable against GSMA CI
+LPA <-- eUICC: eUICCSigned1, eUICC & EUM Certificate
+LPA -> "SM-DP+": Authenticate Client (eUICCSigned1, eUICC & EUM Certificate)
+rnote over "SM-DP+"
+Verify eUICC & EUM Certificate against CI
+Verify eUICC signed1 & Signature
+Attached TransactionID & Server-Challenge matches
+ctxParams1 M-ID matches a PPDO 
+PPDO is (not) associated with EID?
+PPDO is "released" or "downloaded"
+Perform eUICC eligibility check
+Build Profile Metadata
+smdpSigned2 (TransID, CC Required Flag)
+end rnote
+LPA <-- "SM-DP+": TransID, Profile Metadata, smdpSigned2, SM-DP+ (DPpb) Certificate
+
+== Profile Download ==
+
+LPA -> LPA: PPR(s) allowed
+"End User" -> LPA: Profile Download Consent
+"End User" -> LPA: Enter Confirmation Code if required
+LPA -> eUICC: PrepareDownload (smdpSigned2, SM-DP+ (DPpb) Certificate, hashed CC)
+rnote over eUICC
+Verify DPpb Certificate, and if auth and pb have same owner
+Verify signature
+Generate ECKA one-time keypair
+Generate eUICCSigned2 (Trans-ID, otPK-EUICC, HashedCC)
+end rnote
+LPA <-- eUICC: euiccSigned2, euiccSignature2
+LPA -> "SM-DP+": Get Bound Profile Package (euiccSigned2, euiccSignature2)
+rnote over "SM-DP+"
+Verify Signature & hashed Confirmation Code
+Generate ECKA one-time keypair
+Generate Session Keys
+Generate BPP
+Link BPP to EID if not already done
+Encrypt BPP with session keys
+end rnote
+LPA <-- "SM-DP+": Trans-ID, BPP
+
+== Profile Installation ==
+
+LPA -> eUICC : Initialise Secure Channel
+rnote over eUICC: Generate Session Keys
+LPA -> eUICC : Load Bound Profile Package x N
+rnote over eUICC: Rearrange Profile Package, Decrypt with session keys
+LPA <-- eUICC : Profile Installation Result
+LPA -> "SM-DP+" : Profile Installation Result Notification
+
+@enduml

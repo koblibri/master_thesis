@@ -1,0 +1,62 @@
+\RequirePackage[l2tabu,orthodox]{nag}
+
+% TODO: decide if one-sided/two-sided
+%\documentclass[headsepline,footsepline,footinclude=false,fontsize=11pt,paper=a4,listof=totoc,bibliography=totoc,BCOR=12mm,DIV=12]{scrbook} % two-sided
+\documentclass[headsepline,footsepline,footinclude=false,oneside,fontsize=11pt,paper=a4,listof=totoc,bibliography=totoc]{scrbook} % one-sided
+
+% TODO: change citation style in settings
+\input{settings}
+
+% TODO: change thesis information
+\newcommand*{\getUniversity}{Technische Universität München}
+\newcommand*{\getFaculty}{Department of Informatics}
+\newcommand*{\getTitle}{Security Analysis of the eSIM and Concept for a Unified Framework}
+\newcommand*{\getTitleGer}{Sicherheitsanalyse der eSIM und Konzept für ein Vereinheitlichtes System}
+\newcommand*{\getAuthor}{Johannes Koblbauer}
+\newcommand*{\getDoctype}{Master's Thesis in Informatics}
+\newcommand*{\getSupervisor}{Prof. Dr. Claudia Eckert}
+\newcommand*{\getAdvisor}{Ludwig Peukert, Michael Spähn, Maximilian von Tschirschnitz}
+\newcommand*{\getSubmissionDate}{15.09.2022}
+\newcommand*{\getSubmissionLocation}{Munich}
+\makeglossaries
+\loadglsentries{acronyms}
+
+\begin{document}
+% Set page numbering to avoid "destination with the same identifier has been already used" warning for cover page.
+% (see https://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Problems_with_Links_and_Pages).
+\pagenumbering{alph}
+\input{pages/cover}
+
+\frontmatter{}
+
+\input{pages/title}
+\input{pages/disclaimer}
+%\input{pages/acknowledgments}
+\input{pages/abstract}
+\microtypesetup{protrusion=false}
+\tableofcontents{}
+\printglossary[type=\acronymtype, nonumberlist]
+\microtypesetup{protrusion=true}
+
+\mainmatter{}
+
+\input{chapters/01_introduction}
+\input{chapters/02_task}
+\input{chapters/03_related_work}
+\input{chapters/04_eSIM_architecture}
+\input{chapters/05_security_analysis}
+\input{chapters/06_proposed_improvements}
+\input{chapters/07_merging_m2m_consumer}
+\input{chapters/08_discussion}
+\input{chapters/09_conclusion}
+% TODO: add more chapters here
+
+\appendix{}
+
+\microtypesetup{protrusion=false}
+\listoffigures{}
+\listoftables{}
+\microtypesetup{protrusion=true}
+\printbibliography{}
+
+\end{document}

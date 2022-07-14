@@ -1,0 +1,32 @@
+@startuml
+participant MNO
+participant "SM-DP" 
+participant "SM-SR"
+participant eUICC
+
+MNO -> "SM-DP": Order and Create Profile
+rnote over "SM-DP": Generate & Personalize Profile
+"SM-DP" <-> "SM-SR": Mutual Authentication
+"SM-DP" -> "SM-SR": EIS Request
+"SM-DP" -> "SM-SR": Installation Request
+"SM-SR" -> eUICC: RSP Session Triggering
+"SM-SR" -> eUICC: ISD-P Creation
+rnote over eUICC: ISD-R creates ISD-P
+"SM-DP" <-> eUICC: ISD-P Key Establishment
+rnote over "SM-DP": Encrypt Profile with Session Keys
+"SM-DP" -> eUICC: Profile Download and Installation
+rnote over eUICC
+Check Policy
+Install Profile
+end rnote
+MNO <-- eUICC: Profile Installation Result
+
+"SM-DP" -> eUICC: Profile Enabling Request
+rnote over eUICC
+Check Policy
+Disables Current Profile
+Enables New Profile
+end rnote
+"SM-DP" <-- eUICC: Profile Enabling Result
+
+@enduml

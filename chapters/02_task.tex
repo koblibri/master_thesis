@@ -1,0 +1,28 @@
+% !TeX root = ../main.tex
+% Add the above to each chapter to make compiling the PDF easier in some editors.
+
+\chapter{Task}\label{chapter:task}
+The foundation and main focus of this work will be a thorough security analysis of the GSMA eSIM specification. Questions like
+\begin{itemize}
+    \item What are the requirements of eSIM for the individual systems
+    \item How does the eSIM and the server mutually authenticate each other
+    \item How does a profile push/pull work, what information is required and how is it authenticated
+    \item What communication does exist and how are these (secure) channels built
+    \item Are common attacks (e.g. Man in the middle, Dolev-Yao) properly averted
+    \item Can keys and certificates be compromised and are there appropriate measures to handle this
+\end{itemize}
+and more must be answered. It is necessary to investigate in detail whether there are weaknesses in the specification and how these can be eliminated.
+
+The second step will be to evolve the current specification. The work should analyze, which components can be reused, which need improvements and which need a fundamental restructuring with a focus on the remote profile provisioning. The confidentiality and integrity of the MNO profile and usage data must be guaranteed at all times, which requires a mutual authentication of both the profile server and the hardware component (\acrshort{eUICC}). Relevant scientific backgrounds must be used to support the decisions.
+
+The GSMA specification can also be questioned, as to why two standards with entirely different solutions and software-stacks for similar functionalities must co-exist.
+A unification of both systems would greatly increase the ease of use and flexibility of the eSIM itself.
+Therefore, the third step of this work will be to unify the specification for the two-model eSIM and try to merge M2M with Consumer such that one common framework supports both methods for profile provisioning. Such a model must consider the following aspects:
+\begin{itemize}
+    \item Simultaneously support a profile "push" (Server initiated) and "pull" (Device initiated)
+    \item Key-management (if required) is simplified
+    \item Specification is easy to implement and runs on target (resource constrained) devices
+    \item All security concerns as defined in the spec-evolution of step two are satisfied
+\end{itemize}
+Finally, this system should then be implemented as a proof-of-concept. A current idea is to modify the consumer software stack to fit the requirements of the proposed model. 
+

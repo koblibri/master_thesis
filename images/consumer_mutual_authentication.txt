@@ -1,0 +1,87 @@
+@startuml
+skinparam maxMessageSize 500
+LPA -> LPA : Scan Activation Code containing SM-DP+ Address, AC Token (= Matching ID), SM-DP+ OID.
+group [ES9+]InitiateAuthentication
+ "SM-DP+" <- LPA : eUICC Challenge, eUICC Info1, smdpAddress
+ rnote over "SM-DP+"
+  Check SM-DP+ Address
+  Verify eUICC Signature
+ end rnote
+ alt verification fail
+  "SM-DP+" --> LPA : [Execution Failed]
+ else verification success
+  rnote over "SM-DP+"
+   Generate TransactionID
+   Generate serverChallenge
+   Generate serverSigned1 {TransactionID, eUICCChallenge, serverChallenge, SM-DP+-Address}
+   Generate serverSignature1 over serverSigned1
+  end rnote
+ "SM-DP+"->LPA: TransactionID, serverChallenge, serverSigned1, serverSignature, CI-PubKey-ID, SM-DP+-Certificate
+ end
+end
+rnote over LPA
+ Check SM-DP+ Address. 
+ OID in Cert must match OID in AC.
+ Generate ctxParams1
+ Authenticate Server
+end rnote
+rnote right LPA
+eUICCSigned1 contains:
+ - transactionID
+ - serverAddress
+ - serverChallenge
+ - euiccInfo2
+   - List of eUICC Capabilities
+ - ctxParams1
+   - matchingID
+   - deviceInfo: List of Device Capabilities
+end rnote
+group [ES9+]AuthenticateClient
+ LPA -> "SM-DP+" : transactionID, authenticateServerResponse [eUICCSigned1, eUICCSignature1, eUICC-Certificate, EUM-Certificate]
+
+ rnote over "SM-DP+"
+  Verify EUM-Certificate with CI-PK, extract EUM-PK
+  Verify eUICC-Certificate with EUM-PK
+  Verify eUICCSignature1 and eUICCSigned1
+  Attached TransactionID and serverChallenge matches
+ end rnote
+  "SM-DP+" --> LPA : [Execution failed]
+ rnote over "SM-DP+"
+  Maximum Download Attempts for profile Download exceeded 
+ end rnote
+  "SM-DP+" --> LPA : [Execution failed]
+  rnote over "SM-DP+": ctxParams1 contain ctxParamsForCommonAuthetication
+  alt Pending Profile download order associated with EID
+   rnote over "SM-DP+"
+   ctxParams for CA contain MatchingID: Verification
+   No MatchingID: Select any Profile Download order associated with this EID  
+   end rnote
+  else No PPDO associated with EID
+   rnote over "SM-DP+"
+    ctxParams for CA contain MatchingID: 
+     - Check if there is a PPDO with this MatchingID 
+     - PPDO is not associated with any EID
+    No MatchingID: Verification Fail
+   end rnote
+   "SM-DP+" --> LPA: [Execution failed]
+ end
+  rnote over "SM-DP+"
+   Identify Profile for PPDO
+   Profile has been released
+   Perform eUICC eligibility check
+  end rnote
+  "SM-DP+" --> LPA : [Execution Failed]
+  rnote over "SM-DP+"
+   Generate Profile Metatdata
+   Attach PK.EUICC.ECDSA to ongoing RSP session
+   Does order require confirmation code?
+   Generate smdpSigned2 data object & smdpSignature2
+  end rnote
+"SM-DP+" -> LPA : transactionID, profileMetaData, smdpSigned2, smdpSignature2, smdpCertificate
+end group
+rnote over "SM-DP+"
+Verify PPDO exists for MatchingID
+If PPDO is already linked to EID, verify EID matches
+PPDO is in "Released" or "Downloaded" State
+end rnote
+@enduml
